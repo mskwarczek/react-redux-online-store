@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Sample product 1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id molestie elit. Ut lobortis interdum vehicula. Etiam pharetra mattis sollicitudin. Proin ultrices dignissim est non pretium. Vestibulum ac dui ut odio blandit consequat ac eget arcu. Suspendisse in viverra leo. Nulla commodo risus non fermentum laoreet. Pellentesque id augue quis ex elementum gravida. In ipsum diam, laoreet eu feugiat nec, vulputate in odio.",
+        "image": "sample.png",
+        "price": 30
+    },
+    {
+        "id": 2,
+        "name": "Sample product 2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id molestie elit. Ut lobortis interdum vehicula. Etiam pharetra mattis sollicitudin. Proin ultrices dignissim est non pretium. Vestibulum ac dui ut odio blandit consequat ac eget arcu. Suspendisse in viverra leo. Nulla commodo risus non fermentum laoreet. Pellentesque id augue quis ex elementum gravida. In ipsum diam, laoreet eu feugiat nec, vulputate in odio.",
+        "image": "sample.png",
+        "price": 30
+    },
+    {
+        "id": 3,
+        "name": "Sample product 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id molestie elit. Ut lobortis interdum vehicula. Etiam pharetra mattis sollicitudin. Proin ultrices dignissim est non pretium. Vestibulum ac dui ut odio blandit consequat ac eget arcu. Suspendisse in viverra leo. Nulla commodo risus non fermentum laoreet. Pellentesque id augue quis ex elementum gravida. In ipsum diam, laoreet eu feugiat nec, vulputate in odio.",
+        "image": "sample.png",
+        "price": 30
+    },
+    {
+        "id": 4,
+        "name": "Sample product 4",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id molestie elit. Ut lobortis interdum vehicula. Etiam pharetra mattis sollicitudin. Proin ultrices dignissim est non pretium. Vestibulum ac dui ut odio blandit consequat ac eget arcu. Suspendisse in viverra leo. Nulla commodo risus non fermentum laoreet. Pellentesque id augue quis ex elementum gravida. In ipsum diam, laoreet eu feugiat nec, vulputate in odio.",
+        "image": "sample.png",
+        "price": 30
+    },
+    {
+        "id": 5,
+        "name": "Sample product 5",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id molestie elit. Ut lobortis interdum vehicula. Etiam pharetra mattis sollicitudin. Proin ultrices dignissim est non pretium. Vestibulum ac dui ut odio blandit consequat ac eget arcu. Suspendisse in viverra leo. Nulla commodo risus non fermentum laoreet. Pellentesque id augue quis ex elementum gravida. In ipsum diam, laoreet eu feugiat nec, vulputate in odio.",
+        "image": "sample.png",
+        "price": 30
+    },
+    {
+        "id": 6,
+        "name": "Sample product 6",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id molestie elit. Ut lobortis interdum vehicula. Etiam pharetra mattis sollicitudin. Proin ultrices dignissim est non pretium. Vestibulum ac dui ut odio blandit consequat ac eget arcu. Suspendisse in viverra leo. Nulla commodo risus non fermentum laoreet. Pellentesque id augue quis ex elementum gravida. In ipsum diam, laoreet eu feugiat nec, vulputate in odio.",
+        "image": "sample.png",
+        "price": 30
+    }
+]
