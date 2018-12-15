@@ -1,14 +1,9 @@
 import React from 'react';
 
-import ProductsList from '../containers/ProductsListContainer';
-
-import productsData from '../data/products-data.json';
-
 export default function HomePage(props) {
     return (
-        <div>
-            <h2>Store Home Page</h2>
-            <ProductsList products={productsData} />
+        <div className='page-container'>
+            <h2 className='page-container__title'>Store Home Page</h2>
         </div>
     );
 };

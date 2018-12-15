@@ -2,23 +2,23 @@ import React from 'react';
 
 export default function ProductListItem(props) {
     return (
-        <div className='product-list-item'>
-            <h3>{props.product.name}</h3>
+        <div className='products-list-item'>
+            <h3 className='products-list-item__title'>{props.product.name}</h3>
             <img 
-                className='product-picture-small'
+                className='products-list-item__picture'
                 src={`products/${ props.product.image }`}
                 title={props.product.name}
                 alt={props.product.name} />
-            <div>
-                {props.product.description }
+            <div className='products-list-item__description'>
+                {props.product.description }<br /><br />
+                Price: {props.product.price} USD<br />
+                In cart: {(props.cart && props.cart.quantity) || 0}
             </div>
-            <p>Price: {props.product.price} USD</p>
-            <p>In cart: {(props.cart && props.cart.quantity) || 0}</p>
             <div>
-                <button onClick={() => props.addToCart(props.product.id)}>Add to cart</button>
+                <button className='button button--important' onClick={() => props.addToCart(props.product.id)}>Add to cart</button>
                 {
                     props.cart
-                        ? <button onClick={() => props.removeFromCart(props.product.id)}>Remove from cart</button>
+                        ? <button className='button' onClick={() => props.removeFromCart(props.product.id)}>Remove from cart</button>
                         : null
                 }
             </div>

@@ -4,10 +4,10 @@ import CartList from '../containers/CartListContainer';
 
 import productsData from '../data/products-data.json';
 
-export default function Cart(props) {
+export default function CartPage(props) {
     return (
-        <div>
-            <h2>My cart</h2>
+        <div className='page-container'>
+            <h2 className='page-container__title'>My cart</h2>
             <CartList products={productsData} />
         </div>
     );

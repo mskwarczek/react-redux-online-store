@@ -1,0 +1,175 @@
+// Variables
+$color-background-primary: turquoise;
+$color-background-secondary: white;
+$color-link: deepskyblue;
+$color-text-primary: black;
+$font-size-huge: 40px;
+$font-size-header: 30px;
+$font-size-big: 22px;
+$font-size-normal: 16px;
+
+// Mixins
+@mixin link-hover {
+    border-color: $color-link;
+    background-color: $color-background-secondary;
+    color: $color-link;
+}
+
+// Global styles
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0 0 50px 0;
+    background-color: $color-background-primary;
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+}
+
+.page-container {
+
+    &__title {
+        text-align: center;
+        margin: 20px auto;
+        line-height: 50px;
+        font-size: $font-size-header;
+        font-weight: bold;
+    }
+}
+
+.header {
+    height: 150px;
+
+    &__title {
+        margin: 0;
+        line-height: 150px;
+        font-size: $font-size-huge;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+.navigation {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 10px 0;
+    list-style-type: none;
+    border-bottom: 2px solid $color-text-primary;
+
+    &__link {
+        padding: 10px 100px;
+        margin: 10px;
+        text-decoration: none;
+        color: $color-text-primary;
+        font-size: $font-size-big;
+        text-transform: uppercase;
+        border: 3px solid transparent;
+        border-radius: 10px;
+        transition: 0.3s ease-in;
+
+        &:hover {
+            @include link-hover;
+        }
+    }
+}
+
+.footer {
+    position: absolute; 
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    height: 50px;
+
+    &__title {
+        margin: 0;
+        line-height: 50px;
+        font-size: $font-size-big;
+        text-align: center;
+    }
+}
+
+.button {
+    padding: 10px;
+    margin: 0 5px;
+    background-color: $color-background-primary;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: $font-size-normal;
+
+    &:hover {
+        @include link-hover;
+    }
+
+    &--important {
+        font-weight: bold;
+    }
+}
+
+// Store with products list
+.products-list {
+    display: flex;
+    flex-flow: row wrap;
+    width: 900px;
+    margin: 20px auto;
+    background-color: $color-background-secondary;
+    border-radius: 30px;
+
+    .products-list-item {
+        width: 300px;
+        padding: 10px;
+
+        &__title {
+            margin: 20px auto;
+            font-size: $font-size-big;
+            text-align: center;
+        }
+
+        &__picture {
+            width: 250px;
+            margin: 10px auto;
+        }
+
+        &__description {
+            margin: 10px auto;
+            font-size: $font-size-normal;
+            text-align: justify;
+        }
+    }
+}
+
+// Cart summary page
+.cart-list {
+    width: 900px;
+    margin: 20px auto;
+    background-color: $color-background-secondary;
+    border-radius: 20px;
+    font-size: $font-size-normal;
+    text-align: center;
+
+    &__information {
+        text-align: center;
+        font-size: $font-size-big;
+    }
+
+    &__row {
+        height: 50px;
+    }
+
+    &__summary {
+        font-size: $font-size-big;
+        font-weight: bold;
+    }
+}

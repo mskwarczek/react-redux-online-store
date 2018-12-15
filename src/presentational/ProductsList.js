@@ -4,7 +4,7 @@ import ProductListItem from './ProductsListItem';
 
 export default function ProductsList(props) {
     return (
-        <div className='product-list'>
+        <div className='products-list'>
             {
                 props.products.map( product => 
                     <ProductListItem
