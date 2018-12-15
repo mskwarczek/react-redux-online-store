@@ -10,7 +10,7 @@ export default function ProductsList(props) {
                     <ProductListItem
                         key={product.id}
                         product={product}
-                        cart={props.cart}
+                        cart={props.cart.filter(cartItem => cartItem.id === product.id)[0]}
                         addToCart={props.addToCart}
                         removeFromCart={props.removeFromCart} />
                 )
