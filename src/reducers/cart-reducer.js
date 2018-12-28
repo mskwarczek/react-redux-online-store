@@ -1,9 +1,9 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from '../actions';
+import { ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART } from '../actions';
 
 const cartReducer = (state = [], action) => {
-    const itemIndex = state.findIndex(item => item.id === action.payload.id);
     switch (action.type) {
-        case ADD_TO_CART:
+        case ADD_TO_CART: {
+            const itemIndex = state.findIndex(item => item.id === action.payload.id);
             if (itemIndex !== -1) {
                 const newItem = { id: state[itemIndex].id, quantity: state[itemIndex].quantity + 1 };
                 const newState = state.slice(0);
@@ -14,7 +14,9 @@ const cartReducer = (state = [], action) => {
                 const newItem = { id: action.payload.id, quantity: 1 };
                 return [...state, newItem];
             }
-        case REMOVE_FROM_CART:
+        }
+        case REMOVE_FROM_CART: {
+            const itemIndex = state.findIndex(item => item.id === action.payload.id);
             if (itemIndex !== -1) {
                 if (state[itemIndex].quantity > 1) {
                     const newItem = { id: state[itemIndex].id, quantity: state[itemIndex].quantity - 1 };
@@ -27,6 +29,9 @@ const cartReducer = (state = [], action) => {
                 }
             }
             else return state;
+        }
+        case CLEAR_CART:
+            return [];
         default: return state;
     }
 };

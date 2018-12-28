@@ -1,4 +1,7 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+import CartListItem from './CartListItem';
 
 export default function CartList(props) {
     return (
@@ -11,28 +14,39 @@ export default function CartList(props) {
                         <th>Quantity</th>
                         <th>Unit price</th>
                         <th>Total price</th>
-                        <th>Add / Remove</th>
+                        {
+                            props.actionButtons === true
+                            ? <th>Add / Remove</th>
+                            : null
+                        }
                     </tr>
                 </thead>
                 <tbody>
                     {
                         props.cart.map(item =>
-                            <tr className='cart-list__row' key={item.id}>
-                                <td>{props.products.filter(product => product.id === item.id)[0].name}</td>
-                                <td>{item.quantity}</td>
-                                <td>{props.products.filter(product => product.id === item.id)[0].price} USD</td>
-                                <td>{props.products.filter(product => product.id === item.id)[0].price * item.quantity} USD</td>
-                                <td>
-                                    <button className='button' onClick={() => props.addToCart(item.id)}> + </button>
-                                    <button className='button' onClick={() => props.removeFromCart(item.id)}> - </button>
-                                </td>
-                            </tr>)
+                            <CartListItem 
+                                key={item.id}
+                                item={item}
+                                products={props.products}
+                                addToCart={props.addToCart}
+                                removeFromCart={props.removeFromCart}
+                                actionButtons={props.actionButtons} />)
                     }
                 </tbody>
                 <tfoot className='cart-list__summary'>
                     <tr className='cart-list__row'>
                         <td colSpan={5}>Total payment: {props.cart.reduce((acc, item) => acc = acc + props.products.filter(product => product.id === item.id)[0].price * item.quantity, 0) } USD</td>
                     </tr>
+                    {
+                        props.actionButtons === true
+                        ? <tr className='cart-list__row'>
+                            <td colSpan={5}>
+                                <NavLink className='button' to='/store'>Back to store</NavLink>
+                                <NavLink className='button' to='/shipment'>Order now</NavLink>
+                            </td>
+                        </tr>
+                        : null
+                    }
                 </tfoot>
             </table>
     );

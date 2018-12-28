@@ -8,7 +8,7 @@ export default function CartPage(props) {
     return (
         <div className='page-container'>
             <h2 className='page-container__title'>My cart</h2>
-            <CartList products={productsData} />
+            <CartList products={productsData} actionButtons={true}/>
         </div>
     );
 };

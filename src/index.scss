@@ -15,7 +15,7 @@ $font-size-normal: 16px;
     color: $color-link;
 }
 
-// Global styles
+// Style reset
 * {
     box-sizing: border-box;
 }
@@ -24,16 +24,22 @@ html {
     height: 100%;
 }
 
+h1, h2, h3, h4 {
+    font-weight: normal;
+}
+
+a {
+    color: $color-text-primary;
+    text-decoration: none;
+}
+
+// Global styles
 body {
     min-height: 100%;
     position: relative;
     margin: 0;
     padding: 0 0 50px 0;
     background-color: $color-background-primary;
-}
-
-h1, h2, h3, h4 {
-    font-weight: normal;
 }
 
 .page-container {
@@ -116,6 +122,15 @@ h1, h2, h3, h4 {
     &--important {
         font-weight: bold;
     }
+
+    &--big {
+        width: 300px;
+        height: 150px;
+        margin: 100px;
+        font-size: $font-size-big;
+        font-weight: bold;
+        border-radius: 10px;
+    }
 }
 
 // Store with products list
@@ -172,4 +187,67 @@ h1, h2, h3, h4 {
         font-size: $font-size-big;
         font-weight: bold;
     }
+}
+
+// Shipment page
+.shipment-form {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px 50px;
+    background-color: $color-background-secondary;
+    border-radius: 20px;
+    font-size: $font-size-normal;
+    text-align: center;
+
+    &__label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__input {
+        width: 300px;
+        height: 30px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px solid $color-text-primary;
+
+        &:hover {
+            border-color: $color-link;
+        }
+
+        &:focus {
+            background-color: $color-background-primary;
+        }
+    }
+}
+
+// Summary page
+.shipment-summary {
+    width: 400px;
+    margin: 20px auto;
+    background-color: $color-background-secondary;
+    border-radius: 20px;
+    font-size: $font-size-normal;
+    text-align: center;
+
+    &__row {
+        height: 50px;
+    }
+
+    &__label {
+        text-align: right;
+        padding-right: 5px;
+    }
+
+    &__value {
+        text-align: left;
+        padding-left: 5px;
+        font-weight: bold;
+    }
+}
+
+// Conforimation page
+.confirmation {
+    text-align: center;
 }
