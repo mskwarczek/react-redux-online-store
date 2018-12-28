@@ -6,16 +6,16 @@ import Navigation from './presentational/Navigation';
 import Footer from './presentational/Footer';
 
 class App extends Component {
-  render() {
-    return (
-        <div>
-            <Header />
-            <Navigation />
-            <Router />
-            <Footer />
-        </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Header />
+                <Navigation />
+                <Router />
+                <Footer />
+            </div>
+        );
+    }
 }
 
 export default App;

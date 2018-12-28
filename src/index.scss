@@ -9,6 +9,13 @@ $font-size-big: 22px;
 $font-size-normal: 16px;
 
 // Mixins
+@mixin position-lt ($horizontal, $vertical) {
+    position: absolute;
+    top: $vertical;
+    left: $horizontal;
+    transform: translate(-$horizontal, -$vertical);
+}
+
 @mixin link-hover {
     border-color: $color-link;
     background-color: $color-background-secondary;
@@ -89,6 +96,27 @@ body {
         &:hover {
             @include link-hover;
         }
+    }
+}
+
+.mini-cart {
+    @include position-lt(90%, 50%);
+    position: fixed;
+    margin: 10px;
+    padding: 30px;
+    width: 200px;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    background: $color-background-secondary;
+    text-align: center;
+
+    &:hover {
+        @include link-hover;
+    }
+
+    &__title {
+        font-size: $font-size-big;
+        margin-top: 5px;
     }
 }
 
