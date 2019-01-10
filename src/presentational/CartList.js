@@ -6,7 +6,10 @@ import CartListItem from './CartListItem';
 export default function CartList(props) {
     return (
         props.cart.length === 0
-            ? <div className='cart-list__information'>Your cart is empty!</div>
+            ? <div className='cart-list__information'>
+                <p>Your cart is empty!</p>
+                <NavLink className='button button--big' to='/store'>Back to shop</NavLink>
+            </div>
             : <table className='cart-list'>
                 <thead>
                     <tr className='cart-list__row'>

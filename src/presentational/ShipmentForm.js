@@ -47,49 +47,56 @@ class ShipmentForm extends Component {
                         name='firstName'
                         type='text'
                         value={this.state.firstName}
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        required />
                 </label><br />
                 <label className="shipment-form__label">Last name:
                     <input className="shipment-form__input"
                         name='lastName'
                         type='text'
                         value={this.state.lastName}
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        required />
                 </label><br />
                 <label className="shipment-form__label">Country: 
                     <input className="shipment-form__input"
                         name='country'
                         type='text'
                         value={this.state.country}
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        required />
                 </label><br />
                 <label className="shipment-form__label">Post code:
                     <input className="shipment-form__input"
                         name='postCode'
                         type='text'
                         value={this.state.postCode}
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        required />
                 </label><br />
                 <label className="shipment-form__label">City: 
                     <input className="shipment-form__input"
                         name='city'
                         type='text'
                         value={this.state.city}
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        required />
                 </label><br />
                 <label className="shipment-form__label">Address:
                     <input className="shipment-form__input"
                         name='address'
                         type='text'
                         value={this.state.address}
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        required />
                 </label><br />
                 <label className="shipment-form__label">Phone number:
                     <input className="shipment-form__input"
                         name='phoneNumber'
                         type='text'
                         value={this.state.phoneNumber}
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        required />
                 </label><br />
 
                 <input className='button button--important'
