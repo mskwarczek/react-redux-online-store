@@ -98,10 +98,10 @@ class ShipmentForm extends Component {
                         onChange={this.handleChange}
                         required />
                 </label><br />
-
-                <input className='button button--important'
-                    type="submit"
-                    value="Continue" />
+                <button className='button button--important'
+                    type="submit">
+                    Continue
+                </button>
             </form>
         );
     }

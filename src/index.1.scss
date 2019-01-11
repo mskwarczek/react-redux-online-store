@@ -1,0 +1,410 @@
+// External imports
+@import url('https://fonts.googleapis.com/css?family=Shojumaru');
+
+// Variables
+$color-primary: #000;
+$color-secondary: #fff;
+$color-shadow: #555;
+$color-link: #DC143C;
+$color-link-dark: #8B0000;
+$color-gradient: linear-gradient(135deg, $color-primary, $color-shadow);
+$color-gradient-link: linear-gradient(135deg, $color-link-dark, $color-link);
+$color-gradient-logo: linear-gradient(135deg, $color-primary, $color-link-dark, $color-link, $color-shadow);
+$font-size-huge: 40px;
+$font-size-header: 30px;
+$font-size-big: 22px;
+$font-size-normal: 16px;
+$clip-path-outer: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%);
+$clip-path-inner: polygon(21% 7.5%, 79% 7.5%, 97.5% 50%, 79% 92.5%, 21% 92.5%, 2.5% 50%);
+
+// Mixins
+@mixin position-lt ($horizontal, $vertical) {
+    position: absolute;
+    top: $vertical;
+    left: $horizontal;
+    transform: translate(-$horizontal, -$vertical);
+}
+
+@mixin link-hover {
+    color: $color-link;
+    background-color: $color-link;
+}
+
+@mixin clip-path-border {
+    @include position-lt(50%, 50%);
+    content: '';
+    height: 100%;
+    width: 100%;
+    z-index: -3;
+    background-color: $color-primary;
+    clip-path: $clip-path-inner;
+}
+
+// Animations
+@keyframes show-background {
+    0% {
+        background-position: -400px -400px;
+        transform: rotate(0deg);
+    }
+    100% {
+        background-position: 0 0;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+// Style reset
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-family: 'Shojumaru', cursive;
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+}
+
+a {
+    display: inline-block;
+    color: $color-secondary;
+    text-decoration: none;
+}
+
+input, textarea, select, button {
+    font-family: 'Shojumaru', cursive;
+}
+
+// Global styles
+body {
+    min-height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0 0 50px 0;
+    background-image: $color-gradient;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.page-container {
+    margin-top: 150px;
+
+    &__title {
+        text-align: center;
+        margin: 50px auto;
+        line-height: 50px;
+        font-size: $font-size-header;
+        font-weight: bold;
+        color: $color-secondary;
+    }
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    margin: 5px;
+    color: $color-primary;
+    background-color: $color-primary;
+    font-size: $font-size-normal;
+    clip-path: $clip-path-outer;
+
+    &::before {
+        @include clip-path-border();
+        background-color: $color-secondary;
+    }
+
+    &:hover {
+        @include link-hover;
+    }
+
+    &--important {
+        font-weight: bold;
+    }
+
+    &--big {
+        width: 250px;
+        height: 100px;
+        margin: 100px;
+        padding: 30px;
+        vertical-align: middle;
+        font-size: $font-size-big;
+        font-weight: bold;
+    }
+}
+
+// Hero
+.hero-wrapper {
+    @include position-lt(50%, 50%);
+    height: 500px;
+    width: 500px;
+
+    .hero {
+        @include position-lt(50%, 50%);
+        height: 400px;
+        width: 400px;
+        background-image: $color-gradient-link;
+        clip-path: $clip-path-outer;
+        pointer-events: none;
+
+        &::before {
+            @include clip-path-border();
+        }
+
+        &__title {
+            color: $color-link;
+            margin: 0;
+            line-height: 400px;
+            font-size: $font-size-huge;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    &__animation {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%);
+        background-image: $color-gradient-logo;
+        background-repeat: no-repeat;
+        animation: show-background 3s ease-out 1;
+        transition: 10s ease-in;
+
+        &:hover {
+            animation: spin 5s linear infinite;
+        }
+    }
+}
+
+// Navigation
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin: 0;
+    height: 50px;
+    padding: 0;
+    list-style-type: none;
+    border-bottom: 2px solid $color-link;
+    background-color: $color-primary;
+
+    &__list-item {
+        margin-top: 26px;
+        height: 50px;
+        transition: 0.2s ease-in;
+
+        &:hover {
+            margin-top: 32px;
+        }
+    }
+
+    &__link {
+        display: block;
+        position: relative;
+        padding: 10px 100px;
+        text-decoration: none;
+        color: $color-secondary;
+        background-image: $color-gradient-link;
+        font-size: $font-size-big;
+        text-transform: uppercase;
+        transition: 0.2s ease-in;
+        clip-path: $clip-path-outer;
+
+        &:hover {
+            @include link-hover;
+        }
+
+        &::before {
+            @include clip-path-border();
+            z-index: -1;
+        }
+    }
+
+    .mini-cart-wrapper {
+        padding: 0;
+
+        &:hover .mini-cart {
+            display: block;
+        }
+
+        li {
+            position: relative;
+        }
+
+        .mini-cart {
+            padding: 20px;
+            color: $color-secondary;
+            background-color: $color-link;
+            text-align: center;
+            clip-path: $clip-path-outer;
+            display: none;
+        
+            &::before {
+                @include clip-path-border();
+            }
+        }
+    }
+}
+
+// Footer
+.footer {
+    position: absolute; 
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    height: 50px;
+
+    &__title {
+        margin: 0;
+        line-height: 50px;
+        font-size: $font-size-big;
+        text-align: center;
+        color: $color-secondary;
+    }
+}
+
+// Store with products list
+.products-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    color: $color-primary;
+    text-align: center;
+
+    .products-list-item {
+        width: 360px;
+        margin: 10px;
+        padding: 10px;
+        background-color: $color-secondary;
+
+        &__title {
+            height: 75px;
+            overflow: hidden;
+            margin: 20px auto;
+            font-size: $font-size-big;
+            text-align: center;
+        }
+
+        &__picture {
+            max-width: 250px;
+            max-height: 250px;
+            width: auto;
+            height: auto;
+            margin: 10px;
+        }
+
+        &__description {
+            height: 300px;
+            overflow: hidden;
+            margin: 10px;
+            font-size: $font-size-normal;
+            text-align: justify;
+        }
+    }
+}
+
+// Cart summary page
+.cart-list {
+    width: 900px;
+    margin: 20px auto;
+    background-color: $color-secondary;
+    font-size: $font-size-normal;
+    text-align: center;
+
+    &__information {
+        text-align: center;
+        font-size: $font-size-big;
+        color: $color-secondary;
+    }
+
+    &__row {
+        height: 50px;
+    }
+
+    &__summary {
+        font-size: $font-size-big;
+        font-weight: bold;
+    }
+}
+
+// Shipment page
+.shipment-form {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px 50px;
+    background-color: $color-secondary;
+    font-size: $font-size-normal;
+    text-align: center;
+
+    &__label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__input {
+        width: 300px;
+        height: 30px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px solid $color-primary;
+
+        &:hover {
+            border-color: $color-link;
+        }
+
+        &:focus {
+            border-color: $color-link;
+            white-space: normal;
+        }
+    }
+}
+
+// Summary page
+.shipment-summary {
+    width: 400px;
+    margin: 20px auto;
+    background-color: $color-secondary;
+    border-radius: 20px;
+    font-size: $font-size-normal;
+    text-align: center;
+
+    &__row {
+        height: 50px;
+    }
+
+    &__label {
+        text-align: right;
+        padding-right: 5px;
+    }
+
+    &__value {
+        text-align: left;
+        padding-left: 5px;
+        font-weight: bold;
+    }
+}
+
+// Conforimation page
+.confirmation {
+    text-align: center;
+}

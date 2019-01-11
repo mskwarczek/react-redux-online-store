@@ -1,8 +1,10 @@
 // Variables
-$color-background-primary: turquoise;
+$color-background-primary: rgb(0, 250, 154);
 $color-background-secondary: white;
 $color-link: deepskyblue;
 $color-text-primary: black;
+$gradient-background: linear-gradient(90deg, $color-background-primary, $color-background-secondary);
+$gradient-background-dark: linear-gradient(90deg, rgba(0, 0, 205, .5), rgba(0, 250, 154, .5));
 $font-size-huge: 40px;
 $font-size-header: 30px;
 $font-size-big: 22px;
@@ -61,7 +63,8 @@ body {
 }
 
 .header {
-    height: 150px;
+    height: calc(100vh - 100px);
+    background-color: rgba(0, 0, 205, .5);
 
     &__title {
         margin: 0;
@@ -78,6 +81,7 @@ body {
     flex-flow: row nowrap;
     justify-content: space-evenly;
     margin: 0;
+    height: 50px;
     padding: 10px 0;
     list-style-type: none;
     border-bottom: 2px solid $color-text-primary;

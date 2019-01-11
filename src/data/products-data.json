@@ -2,42 +2,42 @@
     {
         "id": 1,
         "name": "LEGO City: Dirt - road pursuit",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id molestie elit. Ut lobortis interdum vehicula. Etiam pharetra mattis sollicitudin. Proin ultrices dignissim est non pretium. Vestibulum ac dui ut odio blandit consequat ac eget arcu. Suspendisse in viverra leo. Nulla commodo risus non fermentum laoreet. Pellentesque id augue quis ex elementum gravida. In ipsum diam, laoreet eu feugiat nec, vulputate in odio.",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id molestie elit. Ut lobortis interdum vehicula. Etiam pharetra mattis sollicitudin. Proin ultrices dignissim est non pretium. Vestibulum ac dui ut odio blandit consequat ac eget arcu. Suspendisse in viverra leo.",
         "image": "lego-city-dirt-road-pursuit.jpg",
         "price": 20
     },
     {
         "id": 2,
-        "name": "LEGO City: Arctic Expedition - mobile exploration base",
-        "description": "Nullam eu pulvinar tellus. Fusce in nunc consequat nunc lobortis lacinia id id odio. Donec at arcu eu nisl malesuada tincidunt sed nec nulla. Nullam non iaculis risus. Ut consectetur eget neque vitae varius. In viverra tincidunt dui vitae faucibus. Pellentesque ut eros orci. Aenean aliquam nibh tristique, sodales risus viverra, condimentum elit.",
-        "image": "lego-city-arctic-expedition-mobile-exploration-base.jpg",
+        "name": "LEGO City: Arctic Mobile Base",
+        "description": "Nullam eu pulvinar tellus. Fusce in nunc consequat nunc lobortis lacinia id id odio. Donec at arcu eu nisl malesuada tincidunt sed nec nulla. Nullam non iaculis risus. Ut consectetur eget neque vitae varius. In viverra tincidunt dui vitae faucibus. Pellentesque ut eros orci.",
+        "image": "lego-city-arctic-mobile-base.jpg",
         "price": 30
     },
     {
         "id": 3,
         "name": "LEGO City: Town - bus stop",
-        "description": "Nulla sit amet diam diam. In sed feugiat nibh. Vestibulum luctus molestie condimentum. Nullam laoreet in nunc ut sagittis. Mauris sit amet ligula ut ligula porttitor imperdiet eu sed sem. Proin tristique, nunc ac accumsan consequat, mi nunc facilisis mi, quis pretium nulla ligula eu erat. Praesent accumsan pretium lorem a hendrerit. Vestibulum magna mauris, euismod pellentesque convallis id, dictum vitae dolor.",
+        "description": "Nulla sit amet diam diam. In sed feugiat nibh. Vestibulum luctus molestie condimentum. Nullam laoreet in nunc ut sagittis. Mauris sit amet ligula ut ligula porttitor imperdiet eu sed sem. Proin tristique, nunc ac accumsan consequat, mi nunc facilisis mi, quis pretium nulla ligula eu erat.",
         "image": "lego-city-town-bus-stop.jpg",
         "price": 25
     },
     {
         "id": 4,
         "name": "LEGO Creator: Taj Mahal",
-        "description": "Vestibulum venenatis magna non mauris commodo vehicula. Duis interdum urna vitae massa sodales, sed porttitor nibh consectetur. Maecenas consectetur, enim quis posuere accumsan, erat magna congue augue, eget rhoncus urna elit sed velit. Sed blandit nec ante nec gravida. Praesent vel arcu tellus. Nam euismod euismod pretium.",
+        "description": "Vestibulum venenatis magna non mauris commodo vehicula. Duis interdum urna vitae massa sodales, sed porttitor nibh consectetur. Maecenas consectetur, enim quis posuere accumsan, erat magna congue augue, eget rhoncus urna elit sed velit. Sed blandit nec ante nec gravida.",
         "image": "lego-creator-taj-mahal.jpg",
         "price": 300
     },
     {
         "id": 5,
         "name": "LEGO Harry Potter: Hogwards - Great Hall",
-        "description": "Integer vestibulum, risus ut condimentum vulputate, nibh mauris volutpat erat, nec elementum diam ante at dui. Cras semper, mauris sit amet aliquam aliquet, lectus lectus pulvinar orci, consectetur imperdiet sem odio ac nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis ut convallis libero. Proin non odio et massa fermentum sodales non et lectus.",
+        "description": "Integer vestibulum, risus ut condimentum vulputate, nibh mauris volutpat erat, nec elementum diam ante at dui. Cras semper, mauris sit amet aliquam aliquet, lectus lectus pulvinar orci, consectetur imperdiet sem odio ac nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "image": "lego-harry-potter-hogwards-great-hall.jpg",
         "price": 250
     },
     {
         "id": 6,
         "name": "LEGO Star Wars: Snowspeeder",
-        "description": "Donec sodales risus nec odio interdum ultrices. Praesent eget imperdiet ante. Praesent id cursus lorem, ac vulputate erat. Pellentesque sed ipsum turpis. Nullam felis libero, congue ac finibus nec, interdum sed tortor. Fusce nec lacus porttitor, dictum tellus ut, maximus erat. Aliquam eget velit id diam imperdiet viverra a quis magna. Aliquam erat volutpat.",
+        "description": "Donec sodales risus nec odio interdum ultrices. Praesent eget imperdiet ante. Praesent id cursus lorem, ac vulputate erat. Pellentesque sed ipsum turpis. Nullam felis libero, congue ac finibus nec, interdum sed tortor. Fusce nec lacus porttitor, dictum tellus ut, maximus erat.",
         "image": "lego-star-wars-snowspeeder.jpg",
         "price": 60
     },
@@ -51,7 +51,7 @@
     {
         "id": 8,
         "name": "LEGO The Batman Movie: Joker Manor",
-        "description": "Praesent enim sapien, dignissim tempus bibendum nec, luctus nec diam. Vestibulum fermentum leo eu rhoncus porttitor. Aenean lacinia et nisi ullamcorper aliquam. Sed ut malesuada urna, non dignissim elit. Cras ultrices vel tortor quis accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor tempor ligula sed blandit. Nam eu nunc a lectus suscipit blandit.",
+        "description": "Praesent enim sapien, dignissim tempus bibendum nec, luctus nec diam. Vestibulum fermentum leo eu rhoncus porttitor. Aenean lacinia et nisi ullamcorper aliquam. Sed ut malesuada urna, non dignissim elit. Cras ultrices vel tortor quis accumsan.",
         "image": "lego-the-batman-movie-joker-manor.jpg",
         "price": 200
     }

@@ -9,7 +9,7 @@ import SummaryPage from './presentational/SummaryPage';
 import ConfirmationPage from './presentational/ConfirmationPage';
 
 const Router = () => (
-    <Switch>
+    <Switch >
         <Route exact path='/' component={HomePage} />
         <Route exact path='/store' component={StorePage} />
         <Route exact path='/cart' component={CartPage} />
