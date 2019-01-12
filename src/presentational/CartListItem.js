@@ -10,8 +10,8 @@ export default function CartListItem(props) {
             {
                 props.actionButtons === true
                 ? <td>
-                    <button className='button' onClick={() => props.addToCart(props.item.id)}> + </button>
-                    <button className='button' onClick={() => props.removeFromCart(props.item.id)}> - </button>
+                    <button className='button button--small' onClick={() => props.addToCart(props.item.id)}> + </button>
+                    <button className='button button--small' onClick={() => props.removeFromCart(props.item.id)}> - </button>
                 </td>
                 : null
             }
