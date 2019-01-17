@@ -13,15 +13,14 @@ export default class Navigation extends Component {
         };
 
         this.toggleMenu = this.toggleMenu.bind(this);
-    }
+    };
 
     toggleMenu() {
-        console.log(this.state);
         this.setState((state, props) => {
             const newState = this.state.toggle === 'on' ? 'off' : 'on';
             return { toggle: newState };
         });
-    }
+    };
 
     render() {
         return (
@@ -37,5 +36,5 @@ export default class Navigation extends Component {
                 </ul>
             </nav>
         );
-    }
-}
+    };
+};

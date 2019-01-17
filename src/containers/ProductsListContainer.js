@@ -4,7 +4,8 @@ import ProductsList from '../presentational/ProductsList';
 import { addToCart, removeFromCart } from '../actions.js';
 
 const mapStateToProps = state => ({
-    cart: state.cartReducer
+    cart: state.cartReducer,
+    display: state.displayReducer
 });
 
 const mapDispatchToProps = dispatch => ({

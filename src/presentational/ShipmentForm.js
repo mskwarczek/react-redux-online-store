@@ -17,7 +17,7 @@ class ShipmentForm extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    };
 
     handleChange(event) {
         switch (event.target.name) {
@@ -29,14 +29,14 @@ class ShipmentForm extends Component {
             case 'address': this.setState({ address: event.target.value }); break;
             case 'phoneNumber': this.setState({ phoneNumber: event.target.value }); break;
             default: break;
-        }
-    }
+        };
+    };
 
     handleSubmit(event) {
         this.props.addShipmentData(this.state);
         this.props.history.push('/summary');
         event.preventDefault();
-    }
+    };
 
     render() {
         return (
@@ -104,7 +104,7 @@ class ShipmentForm extends Component {
                 </button>
             </form>
         );
-    }
-}
+    };
+};
 
 export default withRouter(ShipmentForm);

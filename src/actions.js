@@ -5,6 +5,8 @@ export const ADD_SHIPMENT_DATA = 'ADD_SHIPMENT_ADDRESS';
 export const REMOVE_SHIPMENT_DATA = 'REMOVE_SHIPMENT_DATA';
 export const ADD_ORDER = 'ADD_ORDER';
 export const REMOVE_ORDER ='REMOVE_ORDER';
+export const SET_PRODUCTS_FILTERS = 'SET_PRODUCTS_FILTERS';
+export const RESET_PRODUCTS_FILTERS = 'RESET_PRODUCTS_FILTERS';
 
 export function addToCart(id) {
     return {
@@ -12,8 +14,8 @@ export function addToCart(id) {
         payload: {
             id
         }
-    }
-}
+    };
+};
 
 export function removeFromCart(id) {
     return {
@@ -21,14 +23,14 @@ export function removeFromCart(id) {
         payload: {
             id
         }
-    }
-}
+    };
+};
 
 export function clearCart() {
     return {
         type: CLEAR_CART
-    }
-}
+    };
+};
 
 export function addShipmentData(shipmentData) {
     return {
@@ -36,14 +38,14 @@ export function addShipmentData(shipmentData) {
         payload: {
             shipmentData
         }
-    }
-}
+    };
+};
 
 export function removeShipmentData() {
     return {
         type: REMOVE_SHIPMENT_DATA
-    }
-}
+    };
+};
 
 export function addOrder(shipmentData, orderedProducts) {
     return {
@@ -52,11 +54,26 @@ export function addOrder(shipmentData, orderedProducts) {
             shipmentData,
             orderedProducts
         }
-    }
-}
+    };
+};
 
 export function removeOrder() {
     return {
         type: REMOVE_ORDER
     }
-}
+};
+
+export function setProductsFilters(productsFiltersData) {
+    return {
+        type: SET_PRODUCTS_FILTERS,
+        payload: {
+            productsFiltersData,
+        }
+    };
+};
+
+export function resetProductsFilters() {
+    return {
+        type: RESET_PRODUCTS_FILTERS
+    }
+};

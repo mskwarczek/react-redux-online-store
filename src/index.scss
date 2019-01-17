@@ -402,6 +402,37 @@ body {
 }
 
 // Store with products list
+
+.products-filters-wrapper {
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: $color-secondary;
+
+    .products-filters {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        @include phone-vertical {
+            flex-flow: column wrap;
+            height: 100px;
+        }
+
+        &__label {
+            margin: 0 10px;
+        }
+
+        &__input {
+            margin: 0 5px;
+            @include phone {
+                width: 120px;
+            }
+        }
+    }
+}
+
 .products-list {
     display: flex;
     flex-flow: row wrap;
