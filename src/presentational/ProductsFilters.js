@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ProductsFilters extends Component {
 
@@ -76,3 +77,8 @@ class ProductsFilters extends Component {
 };
 
 export default ProductsFilters;
+
+ProductsFilters.propTypes = {
+    setProductsFilters: PropTypes.func.isRequired,
+    resetProductsFilters: PropTypes.func.isRequired
+};

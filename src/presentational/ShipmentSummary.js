@@ -1,5 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+import { shipmentDataShape, cartItemShape} from '../utilities/custom-prop-types';
 
 export default function ShipmentSummary(props) {
     return (
@@ -46,4 +49,11 @@ export default function ShipmentSummary(props) {
             </tbody>
         </table>
     );
+};
+
+ShipmentSummary.propTypes = {
+    shipmentData: shipmentDataShape.isRequired,
+    orderedProducts: PropTypes.arrayOf(cartItemShape).isRequired,
+    addOrder: PropTypes.func.isRequired,
+    clearCart: PropTypes.func.isRequired
 };

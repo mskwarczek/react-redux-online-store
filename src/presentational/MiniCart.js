@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import { productShape, cartItemShape } from '../utilities/custom-prop-types';
 
 export default function MiniCart(props) {
     return (
@@ -7,4 +10,9 @@ export default function MiniCart(props) {
             <span>{props.cart.reduce((acc, item) => acc = acc + props.products.filter(product => product.id === item.id)[0].price * item.quantity, 0) } USD</span>
         </div>
     );
+};
+
+MiniCart.propTypes = {
+    cart: PropTypes.arrayOf(cartItemShape).isRequired,
+    products: PropTypes.arrayOf(productShape).isRequired
 };

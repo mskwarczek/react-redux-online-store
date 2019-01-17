@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import { productShape, cartItemShape } from '../utilities/custom-prop-types';
 
 export default function CartListItem(props) {
     return (
@@ -17,4 +20,18 @@ export default function CartListItem(props) {
             }
         </tr>
     );
+};
+
+CartListItem.propTypes = {
+    item: cartItemShape.isRequired,
+    products: PropTypes.arrayOf(productShape).isRequired,
+    actionButtons: PropTypes.bool,
+    addToCart: PropTypes.func,
+    removeFromCart: PropTypes.func
+};
+
+CartListItem.defaultProps = {
+    actionButtons: false,
+    addToCart: () => console.log('No function assigned'),
+    removeFromCart: () => console.log('No function assigned')
 };

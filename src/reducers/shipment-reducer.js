@@ -1,11 +1,21 @@
 import { ADD_SHIPMENT_DATA, REMOVE_SHIPMENT_DATA } from '../actions';
 
-const shipmentReducer = (state = {}, action) => {
+const initialState = {
+    firstName: '',
+    lastName: '',
+    country: '',
+    postCode: '',
+    city: '',
+    address: '',
+    phoneNumber: ''
+}
+
+const shipmentReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_SHIPMENT_DATA:
             return action.payload.shipmentData;
         case REMOVE_SHIPMENT_DATA:
-            return {};
+            return initialState;
         default: return state;
     }
 };

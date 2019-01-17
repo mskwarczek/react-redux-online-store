@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import { productShape, cartItemShape } from '../utilities/custom-prop-types';
 
 export default function ProductListItem(props) {
     return (
@@ -12,16 +15,27 @@ export default function ProductListItem(props) {
             <div className='products-list-item__description'>
                 {props.product.description }<br /><br />
                 Price: {props.product.price} USD<br />
-                In cart: {(props.cart && props.cart.quantity) || 0}
+                In cart: {(props.cartItem && props.cartItem.quantity) || 0}
             </div>
             <div>
                 <button className='button button--important' onClick={() => props.addToCart(props.product.id)}>Add to cart</button>
                 {
-                    props.cart
+                    props.cartItem
                         ? <button className='button' onClick={() => props.removeFromCart(props.product.id)}>Remove from cart</button>
                         : null
                 }
             </div>
         </div>
     );
+};
+
+ProductListItem.propTypes = {
+    product: productShape.isRequired,
+    addToCart: PropTypes.func.isRequired,
+    removeFromCart: PropTypes.func.isRequired,
+    cartItem: cartItemShape
+};
+
+ProductListItem.defaultProps = {
+    cartItem: null
 };

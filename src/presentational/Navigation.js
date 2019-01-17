@@ -16,7 +16,7 @@ export default class Navigation extends Component {
     };
 
     toggleMenu() {
-        this.setState((state, props) => {
+        this.setState(() => {
             const newState = this.state.toggle === 'on' ? 'off' : 'on';
             return { toggle: newState };
         });

@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+import { shipmentDataShape } from '../utilities/custom-prop-types';
 
 class ShipmentForm extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            firstName: '',
-            lastName: '',
-            country: '',
-            postCode: '',
-            city: '',
-            address: '',
-            phoneNumber: ''
-        };
+        this.state = this.props.shipmentData;
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -108,3 +103,8 @@ class ShipmentForm extends Component {
 };
 
 export default withRouter(ShipmentForm);
+
+ShipmentForm.propTypes = {
+    addShipmentData: PropTypes.func.isRequired,
+    shipmentData: shipmentDataShape.isRequired
+};

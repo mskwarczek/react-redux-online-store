@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import CartListItem from './CartListItem';
+import { productShape, cartItemShape } from '../utilities/custom-prop-types';
 
 export default function CartList(props) {
     return (
@@ -53,4 +55,18 @@ export default function CartList(props) {
                 </tfoot>
             </table>
     );
+};
+
+CartList.propTypes = {
+    cart: PropTypes.arrayOf(cartItemShape).isRequired,
+    products: PropTypes.arrayOf(productShape).isRequired,
+    actionButtons: PropTypes.bool,
+    addToCart: PropTypes.func,
+    removeFromCart: PropTypes.func
+};
+
+CartList.defaultProps = {
+    actionButtons: false,
+    addToCart: () => console.log('No function assigned'),
+    removeFromCart: () => console.log('No function assigned')
 };
