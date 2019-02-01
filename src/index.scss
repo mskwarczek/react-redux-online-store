@@ -53,7 +53,8 @@ $tablet-width: 992px;
     position: absolute;
     top: $vertical;
     left: $horizontal;
-    transform: translate(-$horizontal, -$vertical);
+    -webkit-transform: translate(-$horizontal, -$vertical);
+            transform: translate(-$horizontal, -$vertical);
 }
 
 @mixin link-hover {
@@ -68,33 +69,62 @@ $tablet-width: 992px;
     width: 100%;
     z-index: -3;
     background-color: $color-primary;
-    clip-path: $clip-path-inner;
+    -webkit-clip-path: $clip-path-inner;
+            clip-path: $clip-path-inner;
 }
 
 // Animations
-@keyframes show-background {
+@-webkit-keyframes show-background {
     0% {
         background-position: -400px -400px;
-        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
     }
     100% {
         background-position: 0 0;
-        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+@keyframes show-background {
+    0% {
+        background-position: -400px -400px;
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    100% {
+        background-position: 0 0;
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+                transform: rotate(359deg);
     }
 }
 
 @keyframes spin {
     from {
-        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
     }
     to {
-        transform: rotate(359deg);
+        -webkit-transform: rotate(359deg);
+                transform: rotate(359deg);
     }
 }
 
 // Style reset
 * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 html {
@@ -150,17 +180,29 @@ body {
     margin: 5px;
     cursor: pointer;
     color: $color-primary;
-    background-color: $color-primary;
+    border-radius: 5px;
+    border: 1px solid $color-primary;
+    background-color: $color-secondary;
     font-size: $font-size-normal;
-    clip-path: $clip-path-outer;
+    @supports ((-webkit-clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%)) or (clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%))) {
+        -webkit-clip-path: $clip-path-outer;
+                clip-path: $clip-path-outer;
+        background-color: $color-primary;
+    }
 
     &::before {
-        @include clip-path-border();
-        background-color: $color-secondary;
+        @supports ((-webkit-clip-path: polygon(21% 7.5%, 79% 7.5%, 97.5% 50%, 79% 92.5%, 21% 92.5%, 2.5% 50%)) or (clip-path: polygon(21% 7.5%, 79% 7.5%, 97.5% 50%, 79% 92.5%, 21% 92.5%, 2.5% 50%))) {
+            @include clip-path-border();
+            background-color: $color-secondary;
+        }
     }
 
     &:hover {
-        @include link-hover;
+        background-color: $color-link;
+        color: $color-primary;
+        @supports ((-webkit-clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%)) or (clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%))) {
+            @include link-hover;
+        }
     }
 
     &--important {
@@ -197,16 +239,24 @@ body {
         @include position-lt(50%, 50%);
         height: 400px;
         width: 400px;
-        background-image: $color-gradient-link;
-        clip-path: $clip-path-outer;
+        background-color: $color-primary;
+        border-radius: 50%;
         pointer-events: none;
+        @supports ((-webkit-clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%)) or (clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%))) {
+            -webkit-clip-path: $clip-path-outer;
+                    clip-path: $clip-path-outer;
+            border-radius: 0;
+            background-image: $color-gradient-link;
+        }
         @include phone-vertical {
             height: 240px;
             width: 240px;
         }
 
         &::before {
-            @include clip-path-border();
+            @supports ((-webkit-clip-path: polygon(21% 7.5%, 79% 7.5%, 97.5% 50%, 79% 92.5%, 21% 92.5%, 2.5% 50%)) or (clip-path: polygon(21% 7.5%, 79% 7.5%, 97.5% 50%, 79% 92.5%, 21% 92.5%, 2.5% 50%))) {
+                @include clip-path-border();
+            }
         }
 
         &__title {
@@ -230,14 +280,22 @@ body {
         width: 100%;
         position: absolute;
         z-index: -1;
-        clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%);
         background-image: $color-gradient-logo;
         background-repeat: no-repeat;
-        animation: show-background 3s ease-out 1;
+        border-radius: 50%;
+        @supports ((-webkit-clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%)) or (clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%))) {
+            -webkit-clip-path: $clip-path-outer;
+                    clip-path: $clip-path-outer;
+            border-radius: 0;
+        }
+        -webkit-animation: show-background 3s ease-out 1;
+                animation: show-background 3s ease-out 1;
+        -webkit-transition: 10s ease-in;
         transition: 10s ease-in;
 
         &:hover {
-            animation: spin 5s linear infinite;
+            -webkit-animation: spin 5s linear infinite;
+                    animation: spin 5s linear infinite;
         }
     }
 }
@@ -253,8 +311,11 @@ body {
     text-align: center;
     font-size: $font-size-big;
     font-family: 'Shojumaru', cursive;
-    color: $color-link;
+    color: $color-secondary;
     background-image: $color-gradient-link;
+    @supports ((-webkit-clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%)) or (clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%))) {
+        color: $color-link;
+    }
     @include phone {
         display: block;
     }
@@ -269,9 +330,15 @@ body {
     top: 0;
     left: 0;
     right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     margin: 0;
     height: 50px;
     padding: 0;
@@ -280,21 +347,36 @@ body {
     border-bottom: 2px solid $color-link;
     background-color: $color-primary;
     @include tablet {
-        flex-flow: column wrap;
-        align-content: space-evenly;
-        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: column wrap;
+                flex-flow: column wrap;
+        -ms-flex-line-pack: space-evenly;
+            align-content: space-evenly;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         height: 150px;
         padding-top: 10px;
         border-bottom: 2px solid transparent;
     }
     @include phone {
-        flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: column nowrap;
+                flex-flow: column nowrap;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         height: 250px;
         display: none;
 
         &.visible {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
         }
     }
@@ -302,6 +384,7 @@ body {
     &__list-item {
         margin-top: 26px;
         height: 50px;
+        -webkit-transition: 0.2s ease-in;
         transition: 0.2s ease-in;
         @include tablet {
             margin-top: 0;
@@ -324,15 +407,24 @@ body {
         background-image: $color-gradient-link;
         font-size: $font-size-big;
         text-transform: uppercase;
+        -webkit-transition: 0.2s ease-in;
         transition: 0.2s ease-in;
-        clip-path: $clip-path-outer;
+        @supports ((-webkit-clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%)) or (clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%))) {
+            -webkit-clip-path: $clip-path-outer;
+                    clip-path: $clip-path-outer;
+        }
 
         &:hover {
-            @include link-hover;
+            color: $color-primary;
+            @supports ((-webkit-clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%)) or (clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%))) {
+                @include link-hover;
+            }
         }
 
         &::before {
-            @include clip-path-border();
+            @supports ((-webkit-clip-path: polygon(21% 7.5%, 79% 7.5%, 97.5% 50%, 79% 92.5%, 21% 92.5%, 2.5% 50%)) or (clip-path: polygon(21% 7.5%, 79% 7.5%, 97.5% 50%, 79% 92.5%, 21% 92.5%, 2.5% 50%))) {
+                @include clip-path-border();
+            }
             z-index: -1;
         }
     }
@@ -354,8 +446,11 @@ body {
             color: $color-secondary;
             background-image: $color-gradient-link;
             text-align: center;
-            clip-path: $clip-path-outer;
             display: none;
+            @supports ((-webkit-clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%)) or (clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0 50%))) {
+                -webkit-clip-path: $clip-path-outer;
+                        clip-path: $clip-path-outer;
+            }
             @include tablet {
                 display: block;
             }
@@ -364,7 +459,9 @@ body {
             }
         
             &::before {
-                @include clip-path-border();
+                @supports ((-webkit-clip-path: polygon(21% 7.5%, 79% 7.5%, 97.5% 50%, 79% 92.5%, 21% 92.5%, 2.5% 50%)) or (clip-path: polygon(21% 7.5%, 79% 7.5%, 97.5% 50%, 79% 92.5%, 21% 92.5%, 2.5% 50%))) {
+                    @include clip-path-border();
+                }
             }
         }
     }
@@ -410,12 +507,24 @@ body {
     background-color: $color-secondary;
 
     .products-filters {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: row nowrap;
+                flex-flow: row nowrap;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         @include phone-vertical {
-            flex-flow: column wrap;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-flow: column wrap;
+                    flex-flow: column wrap;
             height: 100px;
         }
 
@@ -433,9 +542,16 @@ body {
 }
 
 .products-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     max-width: 1200px;
     margin: 20px auto;
     color: $color-primary;
@@ -535,9 +651,15 @@ body {
     text-align: center;
 
     &__label {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
     &__input {
